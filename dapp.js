@@ -630,8 +630,8 @@ window.addEventListener('load', function() {
           var contractBalance = await web3.eth.getBalance(Address);
           withdraw.innerHTML =  "Your current balance is " + creatorBalance + ". The balance of the contract is " + contractBalance;
           await TheGame.methods.withdraw().send({from:ethereum.selectedAddress});
-          //var newCreatorBalance = await web3.eth.getBalance(ethereum.selectedAddress);
-          //withdraw.innerHTML = "Your previous balance was " + creatorBalance + ". The previous contract balance was " + contractBalance + ". Your new balance is " + newCreatorBalance +".";
+          var newCreatorBalance = await web3.eth.getBalance(ethereum.selectedAddress);
+          withdraw.innerHTML = "Your previous balance was " + creatorBalance + ". The previous contract balance was " + contractBalance + ". Your new balance is " + newCreatorBalance +".";
         }
         }
     }
